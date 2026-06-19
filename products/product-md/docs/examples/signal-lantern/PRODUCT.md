@@ -53,7 +53,7 @@ map:
 
 ## About This File
 
-Format: ProductMD v0.1.10
+Format: ProductMD v0.1.11
 Purpose: This file records product input for this project: durable meaning, selected structure, assumptions, boundaries, and references that should guide future work.
 Reading: Frontmatter holds compact product facts; body prose interprets them and never restates them. Backticked product-address references in prose resolve to frontmatter addresses; syntax literals may also use code style.
 Spec: https://github.com/codynoskov/Meaningfall/blob/main/products/product-md/docs/spec.md

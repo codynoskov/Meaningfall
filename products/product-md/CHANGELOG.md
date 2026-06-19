@@ -4,6 +4,14 @@
 
 No changes yet.
 
+## v0.1.12 - 2026-06-19
+
+Specification: ProductMD v0.1.11.
+
+- Added Contribution Placement guidance for classifying user additions before they become final ProductMD content: split mixed additions into atomic claims, place each claim against the owner cascade, avoid parking-lot top-level keys, and surface conflicts for review.
+- Clarified body-section extension rules: custom body sections can carry durable cross-owner interpretation but do not create ProductMD owners, and review notes should be normalized once the product meaning is accepted.
+- Expanded Consumer Behavior and review-tooling guidance around semantic placement, deduplication, sequence pressure, and preserving body guidance as product source.
+
 ## v0.1.11 - 2026-06-13
 
 Packaging: `product-brief` moved out of the ProductMD package into the standalone **Build Flow** product.

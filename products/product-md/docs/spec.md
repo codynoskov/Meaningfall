@@ -1,6 +1,6 @@
 # PRODUCT.md Specification
 
-Status: v0.1.10 specification.
+Status: v0.1.11 specification.
 
 `PRODUCT.md` is a self-contained, plain-text representation of durable product meaning. It describes what a product is, who or what it serves, which things it is about, which context changes behavior, which product-map branches, spaces, items, semantic composition roles, reusable composition profiles, and named navigations matter, which operations matter, which internal product-logic domains must not be lost, and which supplied or external references should guide future work.
 
@@ -126,6 +126,35 @@ Owner roles:
 
 Generators and published examples should prefer catalog form: named `compositions` and `navigations` entries referenced from the map, even when an entry is thin. Named catalogs read better for non-technical reviewers and give body prose stable names to explain. Inline composition and inline navigation projections remain valid authored syntax; consumers preserve them on user-authored files.
 
+### Contribution Placement
+
+ProductMD is open to user additions, but an addition becomes final ProductMD content only after it has a clear owner. Treat free-form user input as source material first, then classify it against the cascade.
+
+When a user adds a sentence, paragraph, heading, or frontmatter field, split mixed material into atomic claims before placing it. A single paragraph may contain an identity fact, a state, a map item, an operation, a risk boundary, and implementation detail; those do not share one owner merely because they arrived together.
+
+Use this placement guide:
+
+| Addition type | Primary owner |
+| --- | --- |
+| Product name, category, audience, provider, public link, legal/formal fact, supplied source | `profile` |
+| Named product meaning, collection fact, semantic view, durable relation | `entities` |
+| Behavior-changing context, role, permission, market, platform, lifecycle, access, status, or state | `conditions` |
+| Operation that creates, changes, sends, approves, resolves, recovers, or otherwise has product effect | `actions` |
+| Durable product item, system crossing, notification surface, integration touchpoint, branch, space, containment, or reachability | `map` |
+| Reusable semantic composition roles shared across map scopes | `compositions` |
+| Deliberately exposed map projection, breadcrumb, local navigation, directory, related-resource set, or curated link set | `navigations` |
+| Cross-cutting internal product logic such as ranking, assignment, pricing, permission resolution, routing, scheduling, policy handling, or game rules | `mechanics` |
+| Rationale, assumptions, boundaries, non-goals, feedback and recovery meaning, review notes, interpretation, or do-not-infer guidance | body |
+| Implementation detail, component choice, generated route, file path, API endpoint, style token, task procedure, or volatile release plan | outside ProductMD unless it has become durable product meaning |
+
+If the addition fits several owners, split it and write each part where it belongs. If the right owner is unclear, keep the material in body prose as a review note until it can be placed; do not invent a new top-level frontmatter key as a parking lot.
+
+Placement follows the cascade. If a later owner needs an earlier missing fact, update or propose the earlier owner first. For example, adding an action that depends on an unrecorded role should prompt a `conditions` update; adding a map item that represents a repeated object may prompt an `entities` update; adding a navigation exposure may prompt a `navigations` entry and the `map` or `compositions` host that references it.
+
+Before adding new material, check whether the meaning is already covered. If it is fully covered, do not duplicate it. If it is partly covered, merge the sharper detail into the existing owner or body paragraph. If it conflicts with existing meaning, preserve the conflict as an open review issue in body prose until a human decision resolves it.
+
+Tools may present likely destinations to the user instead of asking them to know ProductMD vocabulary. Offer only plausible destinations plus a free-form body option. A good prompt says, in effect: this looks like an entity, condition, action, map item, mechanic, or body note; choose the intended meaning, or keep it as prose for later review.
+
 ### Frontmatter
 
 Frontmatter stores compact structure that humans, agents, and tools can read directly.
@@ -189,7 +218,7 @@ Portable or standalone ProductMD files may include a short `## About This File` 
 ```md
 ## About This File
 
-Format: ProductMD v0.1.10
+Format: ProductMD v0.1.11
 Purpose: This file records product input for this project: durable meaning, selected structure, assumptions, boundaries, and references that should guide future work.
 Reading: Frontmatter holds compact product facts; body prose interprets them and never restates them. Backticked product-address references in prose resolve to frontmatter addresses; syntax literals may also use code style.
 Spec: https://github.com/codynoskov/Meaningfall/blob/main/products/product-md/docs/spec.md
@@ -200,6 +229,10 @@ Use this section when a `PRODUCT.md` file may be shared outside its repository o
 `## Overview` is enough for a simple product. Larger, sensitive, multi-role, transactional, operational, map-heavy, composition-heavy, or mechanics-heavy products may use deeper sections such as `## Profile`, `## Entities`, `## Conditions`, `## Actions`, `## Map`, `## Compositions`, `## Navigations`, or `## Mechanics`.
 
 Prefer `##` headings for major semantic owners. Except for `## Overview` and meta context such as `## About This File`, a `##` body section should usually correspond to a frontmatter owner when that owner has useful compact facts. Use `###` headings for optional explanation slots inside a major owner, such as `### References`, `### Feedback And Recovery`, `### Sensitive Review`, `### Boundaries`, or `### Non-Goals`.
+
+Product-specific body sections are allowed when they carry durable interpretation that is clearer as prose than as compact facts. Prefer putting them under the nearest owner as `###` sections. A custom `##` body section is acceptable for cross-owner interpretation, but it does not create a new ProductMD owner and should not become a catch-all for material that belongs in `profile`, `entities`, `conditions`, `actions`, `map`, `compositions`, `navigations`, or `mechanics`.
+
+Free-form user notes may be kept in the body while they are being reviewed. Use a clear prose heading such as `## Review Notes`, `## Appendix`, or an owner-local `### Review Notes` when the material is not yet normalized. A finished ProductMD file should not leave durable product facts only in a parking-lot section; normalize them into the cascade or keep them as explicit body interpretation.
 
 Do not create frontmatter only to mirror a heading. Create compact frontmatter when the product meaning can be represented as reusable facts, lists, semantic axes, or named domains. Keep overview framing, rationale, interpretation, and narrative explanation in the Markdown body.
 
@@ -1045,13 +1078,17 @@ Consumers should treat manual edits as meaningful unless they clearly break YAML
 
 When content appears to belong somewhere else, consumers should warn, ask, or propose a scoped update. They should not silently normalize field names, move content, or invent missing facts.
 
+When accepting a user addition, consumers should classify it before writing it into the final shape. They should split mixed additions, suggest the nearest valid ProductMD owner, check whether the meaning is already covered, and explain any proposed move or merge in ProductMD terms. The user should be able to choose a likely owner or keep the addition as body prose for later review.
+
+Consumers should check sequence pressure. A proposed edit to `map`, `compositions`, `navigations`, or `mechanics` may reveal missing `profile`, `entities`, `conditions`, or `actions` facts. In that case the consumer should propose the earlier-owner update explicitly instead of hiding the new fact in the later owner.
+
 When required or known-needed facts are missing, consumers should ask for the value or preserve an explicit `TBD`. They should not infer legal facts, contact details, routes, states, obligations, or source references from generic product-category assumptions.
 
 Consumers should preserve rare syntax when it is justified by product pressure. Do not simplify `spaces`, non-product `map` branches, group-level `props`, nested state axes, `entities` entries with `collection`, `views`, or `relations`, reusable `compositions`, `props.composition.uses`, named `navigations` and their exposure references, inline navigation projections, reset rules, negative overrides, or mechanics domains only because a smaller example does not use them. If the syntax appears unjustified, report it for review instead of deleting it.
 
 Consumers should update narrowly. A request to revise actions or mechanics should not rewrite profile, conditions, map, or body prose unless the change creates direct pressure on those owners. When a later section reveals a missing earlier fact, propose the earlier owner update explicitly.
 
-Consumers should preserve body guidance as product source. They should not collapse body explanations into frontmatter or delete rationale, assumptions, boundaries, recovery guidance, or review notes because the same topic has a compact YAML value.
+Consumers should preserve body guidance as product source. They should not collapse body explanations into frontmatter or delete rationale, assumptions, boundaries, recovery guidance, or review notes because the same topic has a compact YAML value. If body prose duplicates frontmatter without adding interpretation, consumers may propose shortening it, but they should preserve any meaning that frontmatter cannot carry.
 
 ## Relationship To Other Files
 
@@ -1141,13 +1178,30 @@ A basic checker may verify that:
 - `mechanics` maps product-logic domains to compact domain-name lists rather than workflow graphs, implementation models, or policy tables
 - long-form rationale, edge cases, assumptions, and product rules stay in the Markdown body
 
+Review tooling may also report semantic placement issues:
+
+- a user addition that mixes several owner roles and should be split
+- an addition whose meaning is already covered elsewhere
+- a body paragraph that restates frontmatter without adding interpretation
+- a custom body section that has become a parking lot for facts that belong in the cascade
+- a later-owner addition that needs an earlier `profile`, `entities`, `conditions`, or `actions` fact
+- an entity-like noun hidden only in `map`, when it needs `collection`, `views`, `relations`, conditions, actions, mechanics, or body explanation
+- a condition described in body prose but missing from `conditions`
+- an operation described in body prose but missing from `actions`
+- a navigation or composition concept described repeatedly in body prose that should become a named catalog entry
+- implementation or realization detail that should move outside ProductMD
+
 Strict validation and additional tooling are deferred until repeated use shows a clear need. ProductMD v0.1 should remain useful as a readable file convention without requiring a CLI, package, build step, or validator.
 
 ## Extension Policy
 
 Product-specific names are open inside field-owned mappings such as entity names, condition groups, map branch names, spaces, items, local props, action groups, and mechanics domains.
 
-Top-level ProductMD keys should remain small and deliberate. Adding a new top-level key is a format design decision, not a one-off example choice.
+Body headings are open as prose organization, but they are not schema owners. Prefer owner-aligned `##` headings and owner-local `###` headings; preserve unusual user-authored headings when they carry meaning, and review them when they duplicate or bypass the cascade.
+
+Top-level ProductMD keys should remain small and deliberate. Adding a new top-level key is a format design decision, not a one-off example choice. A new top-level key is justified only when repeated real ProductMD files need a durable owner that cannot be represented as profile facts, entities, conditions, actions, map structure, compositions, navigations, mechanics, or body guidance.
+
+Do not use unknown top-level keys, custom composition roles, layout-based navigation names, or direct custom map props as extension mechanisms. Use open field-owned names, functional navigation names, `props` for local product-specific properties, body prose for interpretation, and review notes for unresolved material.
 
 ## Examples
 

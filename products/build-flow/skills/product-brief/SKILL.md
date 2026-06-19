@@ -1,23 +1,24 @@
 ---
 name: product-brief
-description: Interview someone about a product and produce or update a PRODUCT.md (the ProductMD convention for durable product meaning) from a rough idea, notes, source material, or a scoped update request. Use when a user wants to create, draft, or revise a PRODUCT.md / ProductMD product-context file.
+description: Interview someone about a product and produce or update product memory around PRODUCT.md from a rough idea, notes, source material, or a scoped update request. Use when a user wants to create, draft, or revise PRODUCT.md / ProductMD product context, or initialize Meaningfall product memory for a new product.
 ---
 
 # product-brief
 
-product-brief turns a rough product idea, notes, source material, or a scoped update request into an editable `PRODUCT.md` — the ProductMD convention for durable product meaning. `PRODUCT.md` is product input, not generated output: it records known, chosen, supplied, or intentionally open product meaning.
+product-brief turns a rough product idea, notes, source material, or a scoped update request into editable product memory centered on `PRODUCT.md` — the ProductMD convention for durable product meaning. `PRODUCT.md` is product input, not generated output: it records known, chosen, supplied, or intentionally open product meaning.
 
 You run two layers together:
 
 - **Interview** — how you talk to the user: soft, adaptive, in ordinary product language.
 - **Seed Loop** — how you build and verify the file: `grow` the owners in order, `root` each back to its seed, and repeat until `settled`. This skill is the Seed Loop *instantiated* for ProductMD; the discipline itself (grow/root/settled, propagation, the mechanism/oracle seam) lives in the Seed Loop spec and is not restated here. In this repository: [`products/seed-loop/spec.md`](../../../seed-loop/spec.md).
 
-The format itself is defined by the contract, not by this file. Read it on demand:
+The ProductMD format itself is defined by the ProductMD contract, not by this file. Read references on demand:
 
 - Contract (single source of truth): <https://github.com/codynoskov/Meaningfall/blob/main/products/product-md/docs/spec.md>
 - Complete examples: <https://github.com/codynoskov/Meaningfall/tree/main/products/product-md/docs/examples>
+- Product memory install contract: `references/product-memory-install.md`
 
-Do not restate format rules from memory. When you need owner definitions, routing rules, `map` shape, or `props.composition` rules, consult the contract. If you cannot fetch it, use the compact fallback at the end of this file.
+Do not restate format rules from memory. When you need owner definitions, routing rules, `map` shape, or `props.composition` rules, consult the ProductMD contract. If you cannot fetch it, use the compact fallback at the end of this file.
 
 ## Interview
 
@@ -130,32 +131,65 @@ Verify against the contract and `references/verification.md`. At minimum:
 
 For the full per-owner check, see `references/verification.md`.
 
+### Product Memory Install
+
+For a new product, install the current accepted starter product-memory surface:
+
+```text
+PRODUCT.md
+product-memory/
+  README.md
+  notes.md       # create-on-need
+  decisions.md   # create-on-need
+  drafts.md      # create-on-need
+  glossary.md    # create-on-need
+  archive/       # lazy, first supersession
+AGENTS.md        # default-on approval-visible integration; host-owned
+```
+
+Always create `PRODUCT.md` and `product-memory/README.md` for a new install. Create supporting files only when they have content. Do not create empty support files, empty headings, `product-memory/state.yaml`, or `archive/` unless there is superseded or historical material.
+
+Create or update a small host-owned `AGENTS.md` product-memory block by default unless the user opts out. This is approval-visible: explain what will be written, keep any existing host instructions unchanged, and respect a refusal. If the user opts out, product memory is still installed, but future agents may need to be told manually to read `PRODUCT.md` and `product-memory/README.md`.
+
+Load `references/product-memory-install.md` on demand when installing product memory or checking the install gate. That reference is the operational source of truth for install shape, README content, create-on-need rules, the `AGENTS.md` marked block, and install verification.
+
 ### Generation rules
 
-- Create or update only `PRODUCT.md`.
+- For a new product, create or output the full product-memory starter surface described above.
+- For a scoped update to an existing product with product memory, update only `PRODUCT.md` and any existing or newly needed supporting memory files within the requested scope.
+- For an existing repository with `PRODUCT.md` but no `product-memory/`, do not silently reinstall product memory unless the user explicitly asks. Treat that case as future Setup pressure by default.
 - Preserve manual content and unknown fields unless they clearly conflict with ProductMD.
 - For a scoped update, change only the requested scope and any earlier product meaning the update makes necessary. Do not restart the interview or rewrite unrelated content.
-- Route compact exact facts to frontmatter; route rationale, caveats, assumptions, uncertainty, and product rules to the body or handoff.
+- Route compact exact facts to `PRODUCT.md` frontmatter; route rationale, caveats, assumptions, uncertainty, and product rules to the `PRODUCT.md` body or the appropriate product-memory supporting file when installed.
+- Route unresolved, deferred, future, not-now, or rejected-but-useful material to `product-memory/notes.md` when it should persist.
+- Route candidate product-meaning changes that target a specific future `PRODUCT.md` owner or change to `product-memory/drafts.md`.
+- Route accepted non-obvious or contested rationale to `product-memory/decisions.md`; do not put canonical product truth only in decisions.
+- Route terms, aliases, rejected names, and naming distinctions to `product-memory/glossary.md`; product-changing meaning still belongs in `PRODUCT.md`.
+- Treat practices or principles from external prompts as optional review input, not product truth. They become product memory only when accepted for this product and routed to the right surface.
 - For simple products, `## Overview` may be enough body structure. Products with multiple roles, access states, sensitive/legal pressure, mechanics-heavy behavior, several map branches/items and actions, or composition-heavy map meaning use more `##` sections aligned with owners, and `###` headings for optional explanation slots.
-- If the file may be read outside its repository, add a brief `## About This File` section after the H1 with `Format: ProductMD v0.1.10`, a one-sentence purpose, a `Reading:` key (frontmatter holds compact facts; body prose interprets them; backticked product-address references resolve to frontmatter addresses; syntax literals may also use code style), and `Spec: https://github.com/codynoskov/Meaningfall/blob/main/products/product-md/docs/spec.md`.
-- If you cannot create a file in this chat, output the complete `PRODUCT.md` as one Markdown fenced block, then give the handoff separately. Repository links are context, not a file-writing mechanism.
+- If the file may be read outside its repository, add a brief `## About This File` section after the H1 with `Format: ProductMD v0.1.11`, a one-sentence purpose, a `Reading:` key (frontmatter holds compact facts; body prose interprets them; backticked product-address references resolve to frontmatter addresses; syntax literals may also use code style), and `Spec: https://github.com/codynoskov/Meaningfall/blob/main/products/product-md/docs/spec.md`.
+- If you cannot create files in this chat, output each required file as a complete fenced block, then give the handoff separately. Repository links are context, not a file-writing mechanism.
 
 ### Handoff
 
 End with a handoff that:
 
 - links the created or updated `PRODUCT.md`;
+- links `product-memory/README.md` when product memory was installed;
+- lists supporting product-memory files created, if any;
+- reports whether `AGENTS.md` was created or updated with the marked product-memory block, or whether the user opted out;
 - summarizes what was written or changed;
 - names 2–4 specific parts to review first;
 - lists review-needed values, inferred temporary values, and known-needed `TBD`s;
-- lists intentionally excluded or deferred material;
+- lists intentionally excluded or deferred material and where it was parked;
+- names anything intentionally not created because there was no content;
 - suggests the safest next action, without treating ProductMD as finished beyond the evidence supplied.
 
 ## Contract fallback
 
 Use this only when the spec URL above is unreachable. It is a compact projection, not the authority — the contract at `docs/spec.md` always wins.
 
-- **Format:** ProductMD v0.1.10. A `PRODUCT.md` has optional YAML frontmatter followed by a Markdown body. All fields are optional; include only useful known facts, semantic axes, and known-needed `TBD` values.
+- **Format:** ProductMD v0.1.11. A `PRODUCT.md` has optional YAML frontmatter followed by a Markdown body. All fields are optional; include only useful known facts, semantic axes, and known-needed `TBD` values.
 - **Top-level owners (exact names, this order):**
   - `profile` — identity, audience, contacts, legal/formal facts, and input references.
   - `entities` — named product meanings that need semantic facts; use optional `collection`, `views`, and `relations` only when they preserve product meaning that `map`, `actions`, or body prose would otherwise lose. Collection views describe one member; directed relations prefer `verb: target`; entity names must match map names when the same meaning appears in both owners.
