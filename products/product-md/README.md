@@ -109,15 +109,15 @@ Anonymous visitors can open public previews of notes and library collections. Su
 
 See [`docs/spec.md`](docs/spec.md) for the full field reference and [`docs/examples/`](docs/examples/) for complete files at different levels of product pressure.
 
-## Create one with Build Flow
+## Create one with Product Brief
 
-You do not have to write `PRODUCT.md` by hand. **Build Flow** is the guided-creation product; its Product Brief stage interviews you and creates or updates the starter product-memory surface centered on an editable `PRODUCT.md`. It is packaged as an Agent Skill (the open `SKILL.md` standard), so it runs two ways from one file — installed in a skill-aware tool, or pasted into an ordinary chat.
+You do not have to write `PRODUCT.md` by hand. **Product Brief** is the guided-creation skill; it interviews you and creates or updates the starter product-memory surface centered on an editable `PRODUCT.md`. It is packaged as an Agent Skill (the open `SKILL.md` standard), so it runs in skill-aware tools and can be followed from the root GitHub start prompt.
 
-See [Build Flow](../build-flow/README.md) for both run modes. The skill itself lives at [`../build-flow/skills/product-brief/`](../build-flow/skills/product-brief/) and references this spec — it does not restate the format.
+See the repository root [`README.md`](../../README.md) for the start prompt. The skill itself lives at [`../../skills/product-brief/`](../../skills/product-brief/) and references this spec — it does not restate the format.
 
 ## Use with agents
 
-After `PRODUCT.md` exists, agents should read it before planning or changing product behavior. Build Flow Product Brief installs the canonical default-on marked product-memory block for new product-memory installs; the snippet below is only a minimal manual alternative focused on ProductMD format coherence.
+After `PRODUCT.md` exists, agents should read it before planning or changing product behavior. Product Brief installs the canonical default-on marked product-memory block for new product-memory installs; the snippet below is only a minimal manual alternative focused on ProductMD format coherence.
 
 ```md
 Before changing product behavior, read `PRODUCT.md` and treat it as durable product context:
@@ -137,11 +137,12 @@ If implementation conflicts with `PRODUCT.md`, ask whether the product meaning s
 
 - [`docs/spec.md`](docs/spec.md) — the ProductMD specification. Single source of truth for the format.
 - [`docs/examples/`](docs/examples/) — complete `PRODUCT.md` files.
-- [Build Flow](../build-flow/README.md) — the guided-creation product; its Product Brief stage creates or updates the starter product-memory surface around `PRODUCT.md`.
+- [Product Brief](../../skills/product-brief/) — the guided-creation skill that creates or updates the starter product-memory surface around `PRODUCT.md`.
+- [Build Flow](../build-flow/README.md) — compatibility/history for the former Product Brief package path.
 - [`CHANGELOG.md`](CHANGELOG.md) · [`CONTRIBUTING.md`](CONTRIBUTING.md) · [`NOTICE`](NOTICE) · root [`LICENSE`](../../LICENSE)
 
 ## Status
 
-ProductMD package v0.1.12 ships the ProductMD v0.1.11 specification. The package release adds contribution-placement guidance for classifying user additions; guided creation remains owned by Build Flow.
+ProductMD package v0.1.12 ships the ProductMD v0.1.11 specification. The package release adds contribution-placement guidance for classifying user additions; guided creation is owned by Product Brief.
 
-ProductMD v0.1 is intentionally small. Examples and Build Flow's Product Brief stage should improve the convention without turning `PRODUCT.md` into a runtime, CMS, workflow engine, ontology language, or implementation format.
+ProductMD v0.1 is intentionally small. Examples and the Product Brief skill should improve the convention without turning `PRODUCT.md` into a runtime, CMS, workflow engine, ontology language, or implementation format.

@@ -2,7 +2,8 @@
 
 ## Unreleased
 
-No changes yet.
+- Updates README and contribution boundaries to point guided creation at the canonical
+  root `skills/product-brief/` public skill.
 
 ## v0.1.12 - 2026-06-19
 

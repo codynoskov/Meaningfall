@@ -2,7 +2,13 @@
 
 ## Unreleased
 
-No changes yet.
+- Moves Product Brief's canonical public home to `skills/product-brief/`.
+- Keeps `products/build-flow/skills/product-brief/SKILL.md` as a compatibility loader for published links.
+- Keeps old Product Brief reference paths as compatibility pointers.
+- Freezes the Build Flow package version stream during the compatibility window.
+- Extends the Product Brief product-memory install contract to `install-contract v1.1`.
+- Adds `product-memory/facts.md` and `product-memory/learnings.md` as create-on-need supporting files.
+- Defines the product-design-native memory model for notes, facts, drafts, decisions, learnings, and archive, including draft acceptance versus integration, returned drafts, decision cancellation, rationale versus learning, and archive rules for draft iteration logs.
 
 ## v0.2.0 - 2026-06-19
 

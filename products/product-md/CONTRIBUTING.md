@@ -30,7 +30,7 @@ ProductMD should stay useful as a single root file. Detailed page maps, visual t
 
 Examples should be complete `PRODUCT.md` files unless a contribution explicitly proposes a non-public working artifact. Section fragments, schema-completion examples, and one-off syntax demonstrations should not become the public example surface by default.
 
-Interview and generation procedure belongs in the Build Flow product ([`../build-flow/skills/product-brief/`](../build-flow/skills/product-brief/)), not in the ProductMD spec or examples.
+Interview and generation procedure belongs in the Product Brief skill ([`../../skills/product-brief/`](../../skills/product-brief/)), not in the ProductMD spec or examples.
 
 ## Publication Boundary
 
@@ -42,7 +42,7 @@ Keep public contributions inside:
 - `CONTRIBUTING.md`
 - `docs/`
 
-The interview skill that creates a `PRODUCT.md` is a separate product, Build Flow, and is contributed under `../build-flow/`, not here.
+The interview skill that creates a `PRODUCT.md` is Product Brief and is contributed under `../../skills/product-brief/`, not here.
 
 Do not add or depend on private development paths such as process memory, tickets, drafts, archives, unrelated product folders, or local planning notes.
 
