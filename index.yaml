@@ -1,0 +1,106 @@
+version: 11
+name: meaningfall-public-index
+role: public-repository-map
+
+sections:
+  - name: formats
+    role: public-file-format-contracts
+    path: formats
+    product_md: formats/product-md
+    principles_md: formats/principles-md
+  - name: modules
+    role: public-governed-capabilities-and-disciplines
+    path: modules
+    memory: modules/memory
+    seed_loop: modules/seed-loop
+  - name: skills
+    role: public-skill-distribution
+    path: skills
+    guide: skills/guide
+    install: skills/install
+    verify: skills/verify
+    git_hygiene: skills/git-hygiene
+
+entrypoints:
+  - path: AGENTS.md
+    role: agent-entry-map
+  - path: README.md
+    role: repository-overview
+  - path: SPEC.md
+    role: repository-spec
+  - path: CHANGELOG.md
+    role: repository-changelog
+  - path: CONTRIBUTING.md
+    role: repository-contribution-guide
+  - path: NOTICE
+    role: repository-notice
+  - path: LICENSE
+    role: repository-license
+  - path: formats/product-md/README.md
+    role: productmd-entrypoint
+  - path: formats/product-md/spec.md
+    role: productmd-spec
+  - path: formats/product-md/examples/README.md
+    role: productmd-examples-index
+  - path: formats/principles-md/README.md
+    role: principles-md-entrypoint
+  - path: formats/principles-md/spec.md
+    role: principles-md-spec
+  - path: modules/memory/README.md
+    role: memory-entrypoint
+  - path: modules/memory/spec.md
+    role: memory-spec
+  - path: modules/seed-loop/README.md
+    role: seed-loop-entrypoint
+  - path: modules/seed-loop/spec.md
+    role: seed-loop-spec
+  - path: skills/guide/SKILL.md
+    role: guide-skill
+  - path: skills/install/SKILL.md
+    role: install-skill
+  - path: skills/install/references/product-memory.md
+    role: product-memory-install-reference
+  - path: skills/verify/SKILL.md
+    role: verify-skill
+  - path: skills/verify/references/product-md-output.md
+    role: productmd-output-verification-reference
+  - path: skills/verify/references/repository-surface.md
+    role: repository-surface-verification-reference
+  - path: skills/verify/references/product-memory.md
+    role: product-memory-verification-reference
+  - path: skills/git-hygiene/SKILL.md
+    role: git-hygiene-skill
+  - path: skills/git-hygiene/references/checkpoint.md
+    role: git-hygiene-checkpoint-reference
+
+active_sources:
+  repository:
+    - README.md
+    - SPEC.md
+    - CHANGELOG.md
+    - CONTRIBUTING.md
+    - NOTICE
+    - LICENSE
+    - AGENTS.md
+    - index.yaml
+  formats:
+    - formats/product-md/README.md
+    - formats/product-md/spec.md
+    - formats/product-md/examples/README.md
+    - formats/principles-md/README.md
+    - formats/principles-md/spec.md
+  modules:
+    - modules/memory/README.md
+    - modules/memory/spec.md
+    - modules/seed-loop/README.md
+    - modules/seed-loop/spec.md
+  skills:
+    - skills/guide/SKILL.md
+    - skills/install/SKILL.md
+    - skills/install/references/product-memory.md
+    - skills/verify/SKILL.md
+    - skills/verify/references/product-md-output.md
+    - skills/verify/references/repository-surface.md
+    - skills/verify/references/product-memory.md
+    - skills/git-hygiene/SKILL.md
+    - skills/git-hygiene/references/checkpoint.md
