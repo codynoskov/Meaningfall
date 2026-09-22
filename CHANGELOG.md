@@ -1,5 +1,11 @@
 # Changelog
 
+## Website Pilot v0.1.0 - 2026-09-22
+
+- Added the public Website Pilot start route and a release-pinned package path for
+  one clean separate website Project. The pilot is Actor-free and records explicit
+  capability limits for DataForSEO, Mobbin MCP, Cloudflare, and publication.
+
 This file records Meaningfall repository history. Package-specific releases remain
 visible by package name when the change belongs to one package.
 

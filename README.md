@@ -24,6 +24,10 @@ Run the interview in English.
 Change `English` to another language if needed. Exact product-memory install
 behavior is defined by the [Install skill](skills/install/).
 
+To start a new website Project, share the compact prompt in the
+[Website Pilot start route](skills/website-pilot/START.md). It starts only in a
+clean separate repository and does not require an Actor.
+
 ## Entrypoints
 
 - [`SPEC.md`](SPEC.md) — repository-level public contract.
@@ -35,6 +39,7 @@ behavior is defined by the [Install skill](skills/install/).
 - [`skills/install/`](skills/install/) — Install skill.
 - [`skills/verify/`](skills/verify/) — Verify skill.
 - [`skills/git-hygiene/`](skills/git-hygiene/) — Git Hygiene skill.
+- [`skills/website-pilot/`](skills/website-pilot/) — Website Pilot skill and start route.
 - [`CHANGELOG.md`](CHANGELOG.md) — repository release history.
 - [`CONTRIBUTING.md`](CONTRIBUTING.md) — repository contribution guidance.
 - [`index.yaml`](index.yaml) — machine-readable repository map.
