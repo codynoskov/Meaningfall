@@ -24,11 +24,21 @@ Run the interview in English.
 Change `English` to another language if needed. Exact product-memory install
 behavior is defined by the [Install skill](skills/install/).
 
-To start or continue a website Project, share the compact prompt in the
-[Website Pilot start route](skills/website-pilot/START.md). It uses the current
-repository when that is the selected Project repository; a Meaningfall
-distribution/source repository instead triggers a target-repository question. The
-pilot does not require an Actor.
+To start or continue a website Project, copy and share this prompt:
+
+```text
+Read and follow the current official Meaningfall Website Pilot bootstrap:
+https://github.com/codynoskov/Meaningfall/blob/main/skills/website-pilot/START.md
+
+Start or continue a Meaningfall Website Pilot Project in this current repository.
+
+If this repository is the Meaningfall distribution/source repository rather than the
+website Project repository, ask me for the target repository before changing Project files.
+```
+
+The [Website Pilot start route](skills/website-pilot/START.md) contains the
+versioned package, install lifecycle, capability boundary, and verification details.
+The pilot does not require an Actor.
 
 ## Entrypoints
 
