@@ -1,5 +1,12 @@
 # Changelog
 
+## Website Pilot v0.1.1 - 2026-09-22
+
+- Corrects start routing: the current repository is normally the Website Project
+  repository. Only a Meaningfall distribution/source repository, or an unrelated
+  nonempty repository that was not selected as the Project, triggers a concrete
+  target-repository question before Project files change.
+
 ## Website Pilot v0.1.0 - 2026-09-22
 
 - Added the public Website Pilot start route and a release-pinned package path for

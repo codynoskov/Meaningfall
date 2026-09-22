@@ -6,8 +6,10 @@
 Read and follow the current official Meaningfall Website Pilot bootstrap:
 https://github.com/codynoskov/Meaningfall/blob/main/skills/website-pilot/START.md
 
-Start a new website Project only in a clean, separate Git repository that I choose.
-Do not use, alter, or create the Project inside an existing Meaningfall or Lab repository.
+Start or continue a Meaningfall Website Pilot Project in this current repository.
+
+If this repository is the Meaningfall distribution/source repository rather than the
+website Project repository, ask me for the target repository before changing Project files.
 ```
 
 This is the short client-facing entry prompt. It works whether Meaningfall is
@@ -34,9 +36,18 @@ normal client refresh/restart path, report that as `LIMITED` rather than claimin
 success. Once callable, select the `website-pilot` profile and continue directly
 to safe Project creation or resumption.
 
+## Project repository boundary
+
+The current repository is normally the Website Project repository: create or resume
+the pilot there. Do not create a second repository merely because the Project is new.
+If the current repository is Meaningfall's distribution/source repository, pause for
+one concrete target-repository question before changing Project files. If a current
+repository is nonempty but is neither a valid Website Project nor the selected
+Project repository, preserve its files and ask that same concrete question.
+
 ## Capability boundary
 
-The minimum route needs a clean target repository, filesystem access, Git, Python,
+The minimum route needs the selected Project repository, filesystem access, Git, Python,
 and a local browser or Codex preview surface. Node/npm and a website framework are
 selected only when the accepted Realization needs them. Do not install a CMS,
 analytics, or a provider merely because it exists.
