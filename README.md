@@ -38,6 +38,9 @@ website Project repository, ask me for the target repository before changing Pro
 
 The [Website Pilot start route](skills/website-pilot/START.md) contains the
 versioned package, install lifecycle, capability boundary, and verification details.
+Each Website Pilot also creates `Memory/NOTES.md`, where a human can explicitly
+park feedback about Meaningfall encountered during the work. The note stays in the
+Project repository and never synchronizes with or automatically changes Meaningfall.
 The pilot does not require an Actor.
 
 ## Entrypoints

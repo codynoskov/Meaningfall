@@ -45,6 +45,19 @@ one concrete target-repository question before changing Project files. If a curr
 repository is nonempty but is neither a valid Website Project nor the selected
 Project repository, preserve its files and ask that same concrete question.
 
+## Meaningfall feedback from the Pilot
+
+Each Website Pilot creates `Memory/NOTES.md`. When a human explicitly asks to
+record a reaction to Meaningfall — something useful, confusing, missing, or
+excessive — append a concise dated note with the Pilot context, observation, and
+possible implication. Preserve uncertainty: a note is evidence and a possible
+change request, not accepted Meaningfall Product Meaning.
+
+The note remains in the Website Project repository. Do not infer an upstream
+repository, create a remote link, synchronize it, or make any Meaningfall change.
+A later separately authorized review may promote an agreed direction into the
+appropriate Meaningfall draft, decision, or owned source.
+
 ## Capability boundary
 
 The minimum route needs the selected Project repository, filesystem access, Git, Python,
@@ -73,7 +86,8 @@ credentials or a second configuration/task authority. It creates no Actor state.
 
 The released synthetic fixture exercises installation recovery, an Actor-free
 Project, candidate/accepted Product Meaning, localhost-only preview, rendered
-route verification, correction/rebuild, and continuation from Project-local state.
+route verification, correction/rebuild, Project-local Meaningfall-feedback capture,
+and continuation from Project-local state.
 It does not claim production publication, an active DataForSEO account, an active
 Mobbin connection, an active Cloudflare connection, or a client invocation that was
 not actually observed.

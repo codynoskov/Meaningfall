@@ -1,5 +1,12 @@
 # Changelog
 
+## Website Pilot v0.1.2 - 2026-09-22
+
+- Adds Project-local `Memory/NOTES.md` for explicitly recorded human feedback about
+  Meaningfall encountered during a Website Pilot. Notes preserve context for later
+  review without connecting, synchronizing with, or automatically changing a
+  Meaningfall source repository.
+
 ## Website Pilot v0.1.1 - 2026-09-22
 
 - Corrects start routing: the current repository is normally the Website Project
